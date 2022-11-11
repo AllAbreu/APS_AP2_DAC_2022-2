@@ -25,6 +25,9 @@ public class JogoDAO {
 		try {
 			Date data = new Date();
 			j.setDataCadastro(data);
+			
+			j.maiorValor();
+			
 			EntityManager em = JPAUtil.criarEntityManager();
 			em.getTransaction().begin();
 			em.merge(j);

@@ -18,9 +18,9 @@
 			<p:autoUpdate />
 		</p:messages>
 
+		<p:growl id="message" showDetail="true" />
+
 		<p:panel>
-
-
 			<f:facet name="header">
 				<h:outputText value="" />
 				<p:linkButton outcome="index" value="Voltar"
@@ -40,7 +40,7 @@
 			</p:column>
 
 			<p:column headerText="V 1">
-				
+
 
 				<p:cellEditor>
 					<f:facet name="output">
@@ -48,8 +48,7 @@
 					</f:facet>
 
 					<f:facet name="input">
-						<p:inputText id="v1" value="#{j.v1}"
-							style="width:100%" />
+						<p:inputText id="v1" value="#{j.v1}" style="width:100%" />
 					</f:facet>
 				</p:cellEditor>
 
@@ -57,7 +56,7 @@
 
 
 			<p:column headerText="v 2">
-				
+
 				<p:cellEditor>
 
 					<f:facet name="output">
@@ -65,8 +64,7 @@
 					</f:facet>
 
 					<f:facet name="input">
-						<p:inputText id="v2" value="#{j.v2}"
-							style="width:100%" />
+						<p:inputText id="v2" value="#{j.v2}" style="width:100%" />
 					</f:facet>
 
 				</p:cellEditor>
@@ -74,7 +72,7 @@
 			</p:column>
 
 			<p:column headerText="v 3">
-				
+
 				<p:cellEditor>
 
 					<f:facet name="output">
@@ -82,16 +80,15 @@
 					</f:facet>
 
 					<f:facet name="input">
-						<p:inputText id="v3" value="#{j.v3}"
-							style="width:100%" />
+						<p:inputText id="v3" value="#{j.v3}" style="width:100%" />
 					</f:facet>
 
 				</p:cellEditor>
 
 			</p:column>
-			
+
 			<p:column headerText="v 4">
-				
+
 				<p:cellEditor>
 
 					<f:facet name="output">
@@ -99,16 +96,15 @@
 					</f:facet>
 
 					<f:facet name="input">
-						<p:inputText id="v4" value="#{j.v4}"
-							style="width:100%" />
+						<p:inputText id="v4" value="#{j.v4}" style="width:100%" />
 					</f:facet>
 
 				</p:cellEditor>
 
 			</p:column>
-			
+
 			<p:column headerText="v 5">
-				
+
 				<p:cellEditor>
 
 					<f:facet name="output">
@@ -116,31 +112,40 @@
 					</f:facet>
 
 					<f:facet name="input">
-						<p:inputText id="v5" value="#{j.v5}"
-							style="width:100%" />
+						<p:inputText id="v5" value="#{j.v5}" style="width:100%" />
 					</f:facet>
 
 				</p:cellEditor>
 
 			</p:column>
-			
-			
+
+
 			<p:column headerText="Registro">
 				<p:outputLabel value="#{j.dataCadastro}" />
 			</p:column>
-			
-			<p:column headerText="Ações">
 
-				<p:commandButton action="#{jogoBean.excluir(j)}"
-					update="formulario" styleClass="rounded-button ui-button-danger ui-button-flat"
-					icon="pi pi-trash" title="Excluir"/>
-					
-				  <p:commandButton action="#{jogoBean.maior(j)}" update="formulario"
-					styleClass="rounded-button ui-button-info ui-button-flat" icon="pi pi-filter" title="Maior"/>
-					
+
+			<p:column headerText="Ações" exportable="false">
+
+				<p:commandButton action="#{jogoBean.excluir(j)}" update="formulario"
+					styleClass="rounded-button ui-button-danger ui-button-flat"
+					icon="pi pi-trash" title="Excluir" />
+
+
+
 				<p:rowEditor editTitle="Editar" cancelTitle="Cancelar"
 					saveTitle="Salvar" />
 
+				<p:commandButton action="#{jogoBean.maior(j)}" update="formulario"
+					styleClass="rounded-button ui-button-info ui-button-flat"
+					icon="pi pi-filter" title="Maior">
+					<p:confirm header="O maior número é." message="#{j.maior}" />
+				</p:commandButton>
+
+				<p:confirmDialog global="true" showEffect="fade" hideEffect="fade"
+					responsive="true" width="350">
+
+				</p:confirmDialog>
 
 			</p:column>
 		</p:dataTable>
