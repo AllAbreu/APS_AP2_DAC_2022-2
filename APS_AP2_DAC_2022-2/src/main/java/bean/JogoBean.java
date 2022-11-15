@@ -30,12 +30,11 @@ public class JogoBean {
 		return null;
 	}
 
-	public void onRowEdit(RowEditEvent<Jogo> event) {
+	public void editar(RowEditEvent<Jogo> event) {
 		try {
-			
+
 			JogoDAO.editar(event.getObject());
-			//jogo.MaiorValor();
-			
+
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "Edição realizado com sucesso!"));
 
@@ -47,7 +46,7 @@ public class JogoBean {
 		}
 	}
 
-	public void onRowCancel(RowEditEvent<Jogo> event) {
+	public void cancelar(RowEditEvent<Jogo> event) {
 		FacesContext.getCurrentInstance().addMessage(null,
 				new FacesMessage(FacesMessage.SEVERITY_INFO, "Cancelado", "Edição cancelada com sucesso!"));
 	}
@@ -73,8 +72,10 @@ public class JogoBean {
 
 	public String maior(Jogo j) {
 
+		lista = JogoDAO.listar();
+
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Maior",
-				"O número " + jogo.getMaior() + " é o maior número entre as Valor 1 a valor 5."));
+				+j.getMaior() + " é o maior número entre as Valor 1 a valor 5."));
 
 		return null;
 	}

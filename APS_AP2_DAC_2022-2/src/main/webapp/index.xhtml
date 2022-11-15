@@ -6,35 +6,38 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<h:head><title>Cadastro Jogo</title></h:head>
+<h:head>
+	<title>Cadastro Jogo</title>
+</h:head>
 
 <h:body>
 	<h:form id="formulario">
 		<p:messages id="messages" showDetail="true" closable="true">
-	    	<p:autoUpdate/>
-	    </p:messages>
-	    <p:panel header="Cadastro">
-		    <p:panelGrid columns="2">
-		
-		    	<p:outputLabel for="v1" value="Valor 1 "/>
-				<p:inputText id="v1" value="#{jogoBean.jogo.v1}" required="true"/>
-			
-				<p:outputLabel for="v2" value="Valor 2  "/>
-				<p:inputText id="v2" value="#{jogoBean.jogo.v2}" required="true"/>
-				
-				<p:outputLabel for="v3" value="Valor 3  "/>
-				<p:inputText id="v3" value="#{jogoBean.jogo.v3}" required="true"/>
-				
-				<p:outputLabel for="v4" value="Valor 4  "/>
-				<p:inputText id="v4" value="#{jogoBean.jogo.v4}" required="true"/>
-				
-				<p:outputLabel for="v5" value="Valor 5  "/>
-				<p:inputText id="v5" value="#{jogoBean.jogo.v5}" required="true"/>
-			
-				<p:commandButton value="Salvar" action="#{jogoBean.salvar}"  update="formulario"/>
-				<p:linkButton outcome="listagem" value="Listar"/>
-		    </p:panelGrid>
-	    </p:panel>
+			<p:autoUpdate />
+		</p:messages>
+		<p:panel header="Cadastro">
+			<p:panelGrid columns="2">
+
+				<p:outputLabel for="v1" value="Valor 1 " />
+				<p:inputText id="v1" value="#{jogoBean.jogo.v1}" required="true" />
+
+				<p:outputLabel for="v2" value="Valor 2  " />
+				<p:inputText id="v2" value="#{jogoBean.jogo.v2}" required="true" />
+
+				<p:outputLabel for="v3" value="Valor 3  " />
+				<p:inputText id="v3" value="#{jogoBean.jogo.v3}" required="true" />
+
+				<p:outputLabel for="v4" value="Valor 4  " />
+				<p:inputText id="v4" value="#{jogoBean.jogo.v4}" required="true" />
+
+				<p:outputLabel for="v5" value="Valor 5  " />
+				<p:inputText id="v5" value="#{jogoBean.jogo.v5}" required="true" />
+
+				<p:commandButton value="Salvar" action="#{jogoBean.salvar}"
+					update="formulario" />
+				<p:linkButton outcome="listagem" value="Listar" />
+			</p:panelGrid>
+		</p:panel>
 	</h:form>
 </h:body>
 

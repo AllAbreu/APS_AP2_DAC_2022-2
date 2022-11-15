@@ -1,6 +1,7 @@
 package entidade;
 
-
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -26,26 +27,22 @@ public class Jogo {
 	private Integer v3;
 	private Integer v4;
 	private Integer v5;
-	
+
 	private Integer maior;
 
-	public Integer maiorValor() {
+	public void maiorValor() {
 
-		int[] maiorNumero = new int[5];
-		maiorNumero[0] = v1;
-		maiorNumero[1] = v2;
-		maiorNumero[2] = v3;
-		maiorNumero[3] = v4;
-		maiorNumero[4] = v5;
+		ArrayList<Integer> maiorNumero = new ArrayList<Integer>();
+		maiorNumero.add(Integer.valueOf(v1));
+		maiorNumero.add(Integer.valueOf(v2));
+		maiorNumero.add(Integer.valueOf(v3));
+		maiorNumero.add(Integer.valueOf(v4));
+		maiorNumero.add(Integer.valueOf(v5));
 
-		for (int i = 0; i < maiorNumero.length - 1; i++) {
-			for (int j = i + 1; j < maiorNumero.length; j++) {
-				if (maiorNumero[i] > maiorNumero[j]) {
-					maior = maiorNumero[i];
-				}
-			}
-		}
-		return null;
+		Collections.sort(maiorNumero);
+
+		maior = maiorNumero.get(maiorNumero.size() - 1);
+
 	}
 
 	public Integer getId() {
